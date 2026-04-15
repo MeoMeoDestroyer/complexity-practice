@@ -133,7 +133,7 @@ public class Main {
   }
 
   // The time complexity is:
-  // YOUR ANSWER HERE
+  // O(n) where n is chars,length
   public static void printCharacters(char[] chars) {
     for (int i = 0; i < chars.length; i++) {
       char character = chars[i];
@@ -141,14 +141,14 @@ public class Main {
     }
   }
   // The time complexity is:
-  // YOUR ANSWER HERE
+  // O(1)
   public static double computeAverage(double a, double b) {
     return (a + b) / 2.0;
   }
 
   // assume that each String is bounded by a constant length
   // The time complexity is:
-  // YOUR ANSWER HERE
+  // O(1) -> call once and set.contains
   public static void checkIfContainedHashSet(HashSet<String> set, String target)
   {
     if (set.contains(target)) {
@@ -164,7 +164,7 @@ public class Main {
   // Otherwise, it returns "Person not found"
   // assume that each String is bounded by a constant length
   // What is the time complexity of this method?
-  // YOUR ANSWER HERE
+  // O(n) where n = names.length 
   public static String emailLookup(String[] names, String[] emails, String queryName) {
     for(int i = 0; i < names.length; i++) {
       if (names[i].equals(queryName)) {
@@ -180,7 +180,7 @@ public class Main {
   // Write this method to efficiently return the corresponding email or "Person not found" if appropriate
   // assume that each String is bounded by a constant length
   // What is the time complexity of your solution?
-  // YOUR ANSWER HERE
+  // O(1) we can use the query for HashMap 
   public static String emailLookupEfficient(HashMap<String, String> namesToEmails, String queryName) {
     return null;
   }
@@ -188,7 +188,7 @@ public class Main {
   // What is the time complexity of this method?
   // assume that each String is bounded by a constant length
   // (assume the set and list have the same number of elements)
-  // YOUR ANSWER HERE
+  // O(n^2) where n is worldList and wordSet size 
   public static boolean hasCommon(HashSet<String> wordSet, ArrayList<String> wordList) {
     for(String word : wordSet) {
       if(wordList.contains(word)) {
@@ -201,8 +201,13 @@ public class Main {
   // Do not change the datatype of wordSet or wordList.
   // assume that each String is bounded by a constant length
   // What is the time complexity of your new solution?
-  // YOUR ANSWER HERE
+  // O(n) where n is wordList size so we down from O(n^2) to O(n)
   public static boolean hasCommonEfficient(HashSet<String> wordSet, ArrayList<String> wordList) {
+    for (String word : wordList) {
+      if (wordSet.contains(word)) {
+        return true;
+      }
+    }
     return false;
   }
 
@@ -211,14 +216,16 @@ public class Main {
   // The prices will be updated frequently throughout the day, and you need to efficiently update
   // and access the current price for each stock. The order of the ticker symbols is not important.
   // What would be a good choice of data structure?
-  // YOUR ANSWER HERE
+  // O(n) - Using HashMap 
+  // keys -> Ticker symboys 
+  // values -> current price of each stock
 
   // Suppose you are building a music player application where users can create playlists.
   // Songs can be added to the end of the playlist in the order the user chooses, and the user can
   // skip to the next or previous song. Most operations involve adding songs and accessing them by
   // their position in the playlist.
   // What would be a good choice of data structure?
-  // YOUR ANSWER HERE
+  // Array List to use so you can access by position array index or add songs where you want in the length.
 
   // Suppose you are developing a search feature that keeps track of the user's
   // recent search queries. You want to store the queries in the order they were made,
@@ -226,5 +233,5 @@ public class Main {
   // relatively small, and it is more important to preserve the order of the searches than
   // to optimize for fast lookups or deletions.
   // What would be a good choice of data structure?
-  // YOUR ANSWER HERE
+  // TreeMap so it can keep the order like they want and they priotize order over searches
 }
