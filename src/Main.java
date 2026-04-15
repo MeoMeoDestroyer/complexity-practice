@@ -77,6 +77,7 @@ public class Main {
 
   // Assume that the largest number is no bigger than the length
   // of the array
+  // The time complexity is: O(n^2) where n is the legnth of the nums array.
   public static void computeAllFactorials(int[] nums) {
     for(int num : nums) {
         int result = computeFactorial(num);
@@ -87,7 +88,7 @@ public class Main {
 
   // assume that each String is bounded by a constant length
   // The time complexity is:
-  // YOUR ANSWER HERE
+  // O(n) where n is the number of element in arr -> until target is found or done w arr length
   public static void checkIfContainedArrayList(ArrayList<String> arr, String target) {
     if (arr.contains(target)) {
         System.out.println(target + " is present in the list");
@@ -100,7 +101,7 @@ public class Main {
   // assume n = wordsA.length = wordsB.length
   // assume that each String is bounded by a constant length
   // The time complexity is:
-  // YOUR ANSWER HERE
+  // O(n^2) where n is num of elem in wordsA and wordsB and wordsA = wordsB
   public static boolean containsOverlap(String[] wordsA, String[] wordsB) {
     for(String wordA : wordsA) {
         for(String wordB : wordsB) {
@@ -114,7 +115,8 @@ public class Main {
 
   // assume that each String is bounded by a constant length
   // The time complexity is:
-  // YOUR ANSWER HERE
+  // O(n) where n is worldsA.length and wordB.length.
+  // asumme that wordsA.length = wordsB.length like the last one.
   public static boolean containsOverlap2(String[] wordsA, String[] wordsB) {
     Set<String> wordsSet = new HashSet<>();
     for(String word : wordsA) {
